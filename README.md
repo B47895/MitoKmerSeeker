@@ -6,7 +6,7 @@ This repository exists purely for the purpose of having the program files and re
 
 This repository contains several folders:
 * K-mers -- the final sets of k-mers for the 50 species of interest
-* Programs -- all the programs created for the thesis, not including the neccessary programs that they depend on
+* Programs -- all the programs created for the thesis, not including the neccessary programs that they depend on which need to be downloaded separately
 * Additional files -- files which were also created for the thesis 
 
 For additional information on the files, consult the README files inside the corresponding folders.
