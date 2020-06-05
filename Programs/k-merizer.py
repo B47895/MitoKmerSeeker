@@ -1,4 +1,5 @@
 import os, time
+len_window=32 #Change!
 #Converts fastq files to k-mer lists.
 print("Program starts at time: "+str(time.ctime(time.time())))
 while True:
@@ -16,9 +17,9 @@ while True:
         #Deleting the .fastq as it is no longer needed, ever.
         os.remove(info[0])
         #Making a k-mer list of the .fasta
-        os.system("./glistmaker "+info[0].split(".")[0]+".fasta -w 32 -o "+info[0].split(".")[0])
+        os.system("./glistmaker "+info[0].split(".")[0]+".fasta -w "+str(len_window)+" -o "+info[0].split(".")[0])
         #Renaming AKA deleting the _32 at the end.
-        os.rename(info[0].split(".")[0]+"_32.list",info[0].split(".")[0]+".list")
+        os.rename(info[0].split(".")[0]+"_"+str(len_window)+".list",info[0].split(".")[0]+".list")
         #Deleting the .fasta
         try:
             if os.path.getsize(info[0].split(".")[0]+".list")>1000:
@@ -32,14 +33,14 @@ while True:
         os.remove(info[0])
         os.remove(info[1])
         #Making k-mer lists
-        os.system("./glistmaker "+info[0].split(".")[0]+".fasta -w 32 -o "+info[0].split(".")[0])
-        os.system("./glistmaker "+info[1].split(".")[0]+".fasta -w 32 -o "+info[1].split(".")[0])
-        os.system("./glistcompare "+info[0].split(".")[0]+"_32.list "+info[1].split(".")[0]+"_32.list -u -o temp")
-        os.system("rm "+info[0].split(".")[0]+"_32.list")
-        os.system("rm "+info[1].split(".")[0]+"_32.list")
+        os.system("./glistmaker "+info[0].split(".")[0]+".fasta -w "+str(len_window)+" -o "+info[0].split(".")[0])
+        os.system("./glistmaker "+info[1].split(".")[0]+".fasta -w "+str(len_window)+" -o "+info[1].split(".")[0])
+        os.system("./glistcompare "+info[0].split(".")[0]+"_"+str(len_window)+".list "+info[1].split(".")[0]+"_"+str(len_window)+".list -u -o temp")
+        os.system("rm "+info[0].split(".")[0]+"_"+str(len_window)+".list")
+        os.system("rm "+info[1].split(".")[0]+"_"+str(len_window)+".list")
         try:
-            if os.path.getsize("temp_32_union.list")>1000:
-                os.rename("temp_32_union.list",info[0].split("_")[0]+".list")
+            if os.path.getsize("temp_"+str(len_window)+"_union.list")>1000:
+                os.rename("temp_"+str(len_window)+"_union.list",info[0].split("_")[0]+".list")
                 os.system("rm "+info[0].split(".")[0]+".fasta")
                 os.system("rm "+info[1].split(".")[0]+".fasta")
         except OSError:

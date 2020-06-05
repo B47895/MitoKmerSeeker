@@ -71,16 +71,9 @@ else:
     print("There are no further instructions and the program shall still continue..")
 Sra=open("SraRunInfo.csv","r")
 sralist=[[],[]]
-#TEMP!!!!
-downloaded=[["ERR1473857", "ERR1473872", "ERR1473882", "ERR1473886", "ERR1597900", "ERR1894907", "ERR2013689", "ERR2028458", "ERR2719953", "ERR2752240"],[]]
 for i in Sra.readlines(): #Searching the sra file for best matches
     i=i.split(",")
     if len(i)<10:
-        continue
-    if i[0] in downloaded[0]: #Temppp
-        downloaded[1].append(i[28])
-        continue
-    elif i[28] in downloaded[1]: #Temppp
         continue
     try:
         if int(i[7])>20000:
@@ -108,9 +101,6 @@ for i in tncs:
     for j in i[2]: #Searching through each species' close species
         if count>=5:
             break
-        if j in downloaded[1]: #Tempppp
-            count+=1
-            #print("Mhm.")
         elif j in sralist[0]:
             count+=1
             if j not in wordlist[0]: #Seeing if it is in the previously made list and not already in the wordlist

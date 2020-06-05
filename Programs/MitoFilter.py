@@ -5,7 +5,7 @@ print("Runing all the FASTQ files into sets of k-mers")
 os.system("python k-merizer.py")
 print("Program starts at time: "+str(time.ctime(time.time())))
 #Paramaters
-len_window=32
+len_window=32 #CHANGE!
 tncs=[] #Targets and close species
 last="species name checking"
 badsymbols=["[","]","(",")",",",">"]

@@ -40,7 +40,7 @@ print("Making a kmer list of all the nontargets..")
 nontargets_file=sys.argv[2]
 os.system("./glistmaker "+nontargets_file+" -w "+str(len_window)+" -o Nontarget_list")
 while True:
-    nontargets=open("nontargets.txt","w")
+    nontargets=open("nontarget.txt","w")
     targets=open("target.txt","w")
     all_targets_file=open(sys.argv[1])
     reading=all_targets_file.readlines()
@@ -74,7 +74,7 @@ while True:
     info=info.split("\n")
     info[0]=info[0].split("\t")
     info[1]=info[1].split("\t")
-    nontargets_file_name="nontargets.txt"
+    nontargets_file_name="nontarget.txt"
     os.remove("Target_list.txt")
     os.system("./glistmaker "+nontargets_file_name+" -w "+str(len_window)+" -o Nontarget_list_2") #My addition
     os.system("./glistcompare Nontarget_list_"+str(len_window)+".list Nontarget_list_2_"+str(len_window)+".list"+" --union -o Nontarget_kmers") #My addidion
@@ -96,7 +96,7 @@ while True:
     if count>=reading-2:
         break
 #End of cycle
-os.remove("nontargets.txt")
+os.remove("nontarget.txt")
 os.remove("Nontarget_list_"+str(len_window)+".list")
 os.remove("target.txt")
 statistics.close()
