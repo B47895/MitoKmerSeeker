@@ -40,8 +40,8 @@ print("Making a kmer list of all the nontargets..")
 nontargets_file=sys.argv[2]
 os.system("./glistmaker "+nontargets_file+" -w "+str(len_window)+" -o Nontarget_list")
 while True:
-    nontargets=open("nontarget.txt","w")
-    targets=open("target.txt","w")
+    nontargets=open("nontargets.fna","w")
+    targets=open("targets.fna","w")
     all_targets_file=open(sys.argv[1])
     reading=all_targets_file.readlines()
     for i in range(len(reading)):
@@ -66,7 +66,7 @@ while True:
     reading=len(reading) #To clear the memo and to exit the cycle in the very end.
     #End of my code
     #Creating k-mer lists from one FASTA file of target sequences:
-    os.system("./glistmaker target.txt -w "+str(len_window)+" -o Target_list")
+    os.system("./glistmaker targets.fna -w "+str(len_window)+" -o Target_list")
     print("Target(s) kmers done!")
     #For statistics case..
     os.system("./glistquery Target_list_"+str(len_window)+".list > Target_list.txt")
@@ -74,7 +74,7 @@ while True:
     info=info.split("\n")
     info[0]=info[0].split("\t")
     info[1]=info[1].split("\t")
-    nontargets_file_name="nontarget.txt"
+    nontargets_file_name="nontargets.fna"
     os.remove("Target_list.txt")
     os.system("./glistmaker "+nontargets_file_name+" -w "+str(len_window)+" -o Nontarget_list_2") #My addition
     os.system("./glistcompare Nontarget_list_"+str(len_window)+".list Nontarget_list_2_"+str(len_window)+".list"+" --union -o Nontarget_kmers") #My addidion
@@ -96,8 +96,8 @@ while True:
     if count>=reading-2:
         break
 #End of cycle
-os.remove("nontarget.txt")
+os.remove("nontargets.fna")
 os.remove("Nontarget_list_"+str(len_window)+".list")
-os.remove("target.txt")
+os.remove("targets.fna")
 statistics.close()
 print("Done at time: "+str(time.ctime(time.time())))
