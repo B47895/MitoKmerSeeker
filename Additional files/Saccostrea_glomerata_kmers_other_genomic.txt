@@ -1,0 +1,9 @@
+Saccostrea_glomerata_1_kmer_5	gi|1043374261|ref|NC_030533.1|	96.875	32	1	0	1	32	10119	10150	6.25e-05	54.7	Saccostrea kegaki isolate P380 mitochondrion, complete genome
+Saccostrea_glomerata_1_kmer_19	gi|918020334|ref|NC_027724.1|	96.875	32	1	0	1	32	10150	10181	6.25e-05	54.7	Saccostrea cucullata mitochondrion, complete genome
+Saccostrea_glomerata_1_kmer_33	gi|1043374261|ref|NC_030533.1|	96.875	32	1	0	1	32	7988	8019	6.25e-05	54.7	Saccostrea kegaki isolate P380 mitochondrion, complete genome
+Saccostrea_glomerata_1_kmer_41	gi|918020334|ref|NC_027724.1|	96.875	32	1	0	1	32	10151	10182	6.25e-05	54.7	Saccostrea cucullata mitochondrion, complete genome
+Saccostrea_glomerata_1_kmer_43	gi|1043374261|ref|NC_030533.1|	96.875	32	1	0	1	32	16070	16101	6.25e-05	54.7	Saccostrea kegaki isolate P380 mitochondrion, complete genome
+Saccostrea_glomerata_1_kmer_54	gi|1043374261|ref|NC_030533.1|	96.875	32	1	0	1	32	16108	16077	6.25e-05	54.7	Saccostrea kegaki isolate P380 mitochondrion, complete genome
+Saccostrea_glomerata_1_kmer_224	gi|1043374261|ref|NC_030533.1|	96.875	32	0	1	1	32	7739	7769	2.25e-04	52.8	Saccostrea kegaki isolate P380 mitochondrion, complete genome
+Saccostrea_glomerata_1_kmer_260	gi|1043374261|ref|NC_030533.1|	96.875	32	1	0	1	32	10118	10149	6.25e-05	54.7	Saccostrea kegaki isolate P380 mitochondrion, complete genome
+Saccostrea_glomerata_1_kmer_264	gi|1043374261|ref|NC_030533.1|	96.875	32	1	0	1	32	7987	8018	6.25e-05	54.7	Saccostrea kegaki isolate P380 mitochondrion, complete genome
