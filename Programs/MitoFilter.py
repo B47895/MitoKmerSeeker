@@ -38,7 +38,7 @@ Ref=open("todownload.txt","r")
 ref=Ref.readlines()
 Ref.close()
 namelookup=[[]]
-writestats.write(stats[0].split("\n")[0]+"Close species,number of kmers after filter,freq of kmers after filter,,")
+writestats.write(stats[0].split("\n")[0]+"Close species,number of kmers after filter,freq of kmers after filter,,\n")
 for i in range(len(ref)):
     ref[i]=ref[i].split("\n")[0].split(",")
     namelookup[0].append(ref[i][1])
@@ -100,9 +100,11 @@ for i in tncs:
     os.system("rm f_wrongfreq_"+name[0]+"_"+name[1]+".txt "+name[0]+"_"+name[1]+"_"+str(len_window)+".list "+name[0]+"_"+name[1]+"_"+str(len_window)+"_0_diff1.list nontarget_"+str(len_window)+"_union.list")
     for j in stats:
         if name[0]+" "+name[1] in j:
-            writestats.write(j.split("\n")[0]+forstats+","+str(int(count))+","+str(freqcount/count)+",,")
+            writestats.write(j.split("\n")[0]+",,"+forstats+","+str(int(count))+","+str(freqcount/count)+",,\n")
             break
 writestats.close()
+os.rename("Statistics.csv","Statistics_from_MitoBlast.csv")
+os.rename("Tempstats.csv","Statistics.csv")
 print("Done at time: "+str(time.ctime(time.time())))
         
             
